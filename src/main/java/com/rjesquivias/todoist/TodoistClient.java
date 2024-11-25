@@ -8,11 +8,11 @@ import java.util.Collection;
 @Builder
 public class TodoistClient {
 
-    public static final String REST_V_1_PROJECTS = "/rest/v1/projects/";
-    public static final String REST_V_1_SECTIONS = "/rest/v1/sections/";
-    public static final String REST_V_1_TASKS = "/rest/v1/tasks/";
-    public static final String REST_V_1_COMMENTS = "/rest/v1/comments/";
-    public static final String REST_V_1_LABELS = "/rest/v1/labels/";
+    public static final String REST_V_1_PROJECTS = "/rest/v2/projects/";
+    public static final String REST_V_1_SECTIONS = "/rest/v2/sections/";
+    public static final String REST_V_1_TASKS = "/rest/v2/tasks/";
+    public static final String REST_V_1_COMMENTS = "/rest/v2/comments/";
+    public static final String REST_V_1_LABELS = "/rest/v2/labels/";
     public static final String URL = "https://api.todoist.com";
 
     private final ICommentDao commentDao;
