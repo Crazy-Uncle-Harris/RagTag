@@ -1,0 +1,11 @@
+The version 1 API has been decommed, need to migrate to version 2 API.
+see the below link for a set by step changes.
+
+https://developer.todoist.com/rest/v2/#migrating-from-v1
+
+3 major changes:
+1. All id's are now Strings, but they can still be numeric.
+2. Colors are now Strings, and are the color name no longer a numeric id value.
+3. dates now have milisecond precision: 2021-01-01T12:00:00.123456Z
+
+reference the link above for specific endpoint changes.
