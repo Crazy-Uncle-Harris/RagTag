@@ -15,13 +15,13 @@ import java.util.Collection;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public sealed interface Task permits ImmutableTask {
 
-    long id();
+    String id();
 
     @JsonProperty("project_id")
-    long projectId();
+    String projectId();
 
     @JsonProperty("section_id")
-    long sectionId();
+    String sectionId();
 
     String content();
 
@@ -33,7 +33,7 @@ public sealed interface Task permits ImmutableTask {
     Collection<Long> labelIds();
 
     @JsonProperty("parent_id")
-    long parentId();
+    String parentId();
 
     long order();
 

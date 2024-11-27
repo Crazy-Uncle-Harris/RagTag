@@ -6,11 +6,11 @@ interface IProjectDao {
 
     Collection<Project> getAll();
 
-    Project get(long id);
+    Project get(String id);
 
     Project create(Arguments.CreateProjectArgs args);
 
-    void update(long id, Arguments.UpdateProjectArgs args);
+    void update(String id, Arguments.UpdateProjectArgs args);
 
-    void delete(long id);
+    void delete(String id);
 }

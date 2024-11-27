@@ -31,7 +31,7 @@ final class SectionDao implements ISectionDao {
     }
 
     @Override
-    public Collection<Section> getAll(long project_id) {
+    public Collection<Section> getAll(String project_id) {
         LOGGER.info("SectionDao::getAll(long project_id)");
         HttpRequest request = httpRequestFactory.buildGet(
                 String.format("%s?project_id=%d", baseUri, project_id));
@@ -46,14 +46,14 @@ final class SectionDao implements ISectionDao {
     }
 
     @Override
-    public Section get(long id) {
+    public Section get(String id) {
         LOGGER.info("SectionDao::get(long id)");
         HttpRequest request = httpRequestFactory.buildGet(baseUri + id);
         return httpRequestHelper.makeRequest(request, okPredicate, ImmutableSection.class);
     }
 
     @Override
-    public void update(long id, String name) {
+    public void update(String id, String name) {
         LOGGER.info("SectionDao::update(long id, String name)");
         HttpRequest request = httpRequestFactory.buildPost(baseUri + id,
                 String.format("{\"name\": \"%s\"}", name));
@@ -61,7 +61,7 @@ final class SectionDao implements ISectionDao {
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(String id) {
         LOGGER.info("SectionDao::delete(long id)");
         HttpRequest request = httpRequestFactory.buildDelete(baseUri + id);
         httpRequestHelper.makeRequest(request, noContentPredicate, ImmutableSection.class);

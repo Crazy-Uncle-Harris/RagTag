@@ -6,13 +6,13 @@ interface ISectionDao {
 
     Collection<Section> getAll();
 
-    Collection<Section> getAll(long project_id);
+    Collection<Section> getAll(String project_id);
 
     Section create(Arguments.CreateSectionArgs args);
 
-    Section get(long id);
+    Section get(String id);
 
-    void update(long id, String name);
+    void update(String id, String name);
 
-    void delete(long id);
+    void delete(String id);
 }

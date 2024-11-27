@@ -8,9 +8,9 @@ interface ILabelDao {
 
     Label create(Arguments.CreateLabelArgs args);
 
-    Label get(long id);
+    Label get(String id);
 
-    void update(long id, Arguments.UpdateLabelArgs args);
+    void update(String id, Arguments.UpdateLabelArgs args);
 
-    void delete(long id);
+    void delete(String id);
 }

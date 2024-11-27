@@ -12,7 +12,7 @@ import org.immutables.value.Value;
 )
 @JsonIgnoreProperties(ignoreUnknown = true)
 public sealed interface Label permits ImmutableLabel {
-    long id();
+    String id();
 
     String name();
 

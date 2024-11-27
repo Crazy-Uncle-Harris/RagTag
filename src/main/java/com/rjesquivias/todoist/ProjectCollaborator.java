@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 )
 @JsonIgnoreProperties(ignoreUnknown = true)
 public sealed interface ProjectCollaborator permits ImmutableProjectCollaborator {
-   long id();
+   String id();
    String name();
    String email(); 
 }

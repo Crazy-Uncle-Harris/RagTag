@@ -12,13 +12,13 @@ import org.immutables.value.Value;
 )
 @JsonIgnoreProperties(ignoreUnknown = true)
 public sealed interface Comment permits ImmutableComment {
-    long id();
+    String id();
 
     @JsonProperty("task_id")
-    long taskId();
+    String taskId();
 
     @JsonProperty("project_id")
-    long projectId();
+    String projectId();
 
     String posted();
 

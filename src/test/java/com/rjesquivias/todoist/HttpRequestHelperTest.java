@@ -142,7 +142,7 @@ public class HttpRequestHelperTest {
   }
 
   static Project buildTestProject() {
-    return Project.builder().id(1).name("name").color(Color.BLUE).parentId(1).order(1)
+    return Project.builder().id("1").name("name").color(Color.BLUE).parentId("1").order(1)
         .commentCount(1).shared(true).favorite(true).inboxProject(true).teamInbox(true)
         .syncId(1).url("url").build();
   }

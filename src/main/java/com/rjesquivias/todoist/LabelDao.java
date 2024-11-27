@@ -38,21 +38,21 @@ final class LabelDao implements ILabelDao {
     }
 
     @Override
-    public Label get(long id) {
+    public Label get(String id) {
         LOGGER.info("LabelDao::get(long id)");
         HttpRequest request = httpRequestFactory.buildGet(baseUri + id);
         return httpRequestHelper.makeRequest(request, okPredicate, ImmutableLabel.class);
     }
 
     @Override
-    public void update(long id, Arguments.UpdateLabelArgs args) {
+    public void update(String id, Arguments.UpdateLabelArgs args) {
         LOGGER.info("LabelDao::update(long id, UpdateArgs args)");
         HttpRequest request = httpRequestFactory.buildPost(baseUri + id, args);
         httpRequestHelper.makeRequest(request, noContentPredicate, ImmutableLabel.class);
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(String id) {
         LOGGER.info("LabelDao::delete(long id)");
         HttpRequest request = httpRequestFactory.buildDelete(baseUri + id);
         httpRequestHelper.makeRequest(request, noContentPredicate, ImmutableLabel.class);

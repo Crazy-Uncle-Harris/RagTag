@@ -13,7 +13,7 @@ import org.immutables.value.Value;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public sealed interface Project permits ImmutableProject {
     @JsonProperty("id")
-    long id();
+    String id();
 
     @JsonProperty("name")
     String name();
@@ -22,7 +22,7 @@ public sealed interface Project permits ImmutableProject {
     Color color();
 
     @JsonProperty("parent_id")
-    long parentId();
+    String parentId();
 
     @JsonProperty("order")
     long order();

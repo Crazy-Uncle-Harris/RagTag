@@ -11,11 +11,11 @@ public final class TestConstants {
 
   static final String validUriString = "http://finance.yahoo.com/";
   static final String testToken = "test-token";
-  static final Long testLabelId = 1L;
-  static final Long testProjectId = 19382L;
-  static final Long testSectionId = 28391L;
-  static final Long testTaskId = 1L;
-  static final Long testCommentId = 1L;
+  static final String testLabelId = "1";
+  static final String testProjectId = "19382";
+  static final String testSectionId = "28391";
+  static final String testTaskId = "1";
+  static final String testCommentId = "1";
   static final String testFilter = "test-filter";
   static final String testLang = "en";
   static final String testContent = "testContent";

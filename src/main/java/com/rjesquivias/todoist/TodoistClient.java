@@ -8,11 +8,11 @@ import java.util.Collection;
 @Builder
 public class TodoistClient {
 
-    public static final String REST_V_1_PROJECTS = "/rest/v2/projects/";
-    public static final String REST_V_1_SECTIONS = "/rest/v2/sections/";
-    public static final String REST_V_1_TASKS = "/rest/v2/tasks/";
-    public static final String REST_V_1_COMMENTS = "/rest/v2/comments/";
-    public static final String REST_V_1_LABELS = "/rest/v2/labels/";
+    public static final String REST_V_2_PROJECTS = "/rest/v2/projects/";
+    public static final String REST_V_2_SECTIONS = "/rest/v2/sections/";
+    public static final String REST_V_2_TASKS = "/rest/v2/tasks/";
+    public static final String REST_V_2_COMMENTS = "/rest/v2/comments/";
+    public static final String REST_V_2_LABELS = "/rest/v2/labels/";
     public static final String URL = "https://api.todoist.com";
 
     private final ICommentDao commentDao;
@@ -25,11 +25,11 @@ public class TodoistClient {
         HttpRequestHelper requestHelper = HttpRequestHelper.build(HttpClient.newBuilder().build());
 
         return TodoistClient.builder()
-                .projectDao(new ProjectDao(requestHelper, baseUrl + REST_V_1_PROJECTS, apiToken))
-                .sectionDao(new SectionDao(requestHelper, baseUrl + REST_V_1_SECTIONS, apiToken))
-                .taskDao(new TaskDao(requestHelper, baseUrl + REST_V_1_TASKS, apiToken))
-                .commentDao(new CommentDao(requestHelper, baseUrl + REST_V_1_COMMENTS, apiToken))
-                .labelDao(new LabelDao(requestHelper, baseUrl + REST_V_1_LABELS, apiToken)).build();
+                .projectDao(new ProjectDao(requestHelper, baseUrl + REST_V_2_PROJECTS, apiToken))
+                .sectionDao(new SectionDao(requestHelper, baseUrl + REST_V_2_SECTIONS, apiToken))
+                .taskDao(new TaskDao(requestHelper, baseUrl + REST_V_2_TASKS, apiToken))
+                .commentDao(new CommentDao(requestHelper, baseUrl + REST_V_2_COMMENTS, apiToken))
+                .labelDao(new LabelDao(requestHelper, baseUrl + REST_V_2_LABELS, apiToken)).build();
     }
 
     public static TodoistClient buildClient(String apiToken) {
@@ -48,17 +48,17 @@ public class TodoistClient {
 
     public Collection<Project> getProjects() { return projectDao.getAll(); }
 
-    public Project getProject(long id) { return projectDao.get(id); }
+    public Project getProject(String id) { return projectDao.get(id); }
 
     public Project createProject(Arguments.CreateProjectArgs args) {
         return projectDao.create(args);
     }
 
-    public void updateProject(long id, Arguments.UpdateProjectArgs args) {
+    public void updateProject(String id, Arguments.UpdateProjectArgs args) {
         projectDao.update(id, args);
     }
 
-    public void deleteProject(long id) {
+    public void deleteProject(String id) {
         projectDao.delete(id);
     }
 
@@ -66,7 +66,7 @@ public class TodoistClient {
         return sectionDao.getAll();
     }
 
-    public Collection<Section> getSectionsOfProject(long project_id) {
+    public Collection<Section> getSectionsOfProject(String project_id) {
         return sectionDao.getAll(project_id);
     }
 
@@ -74,15 +74,15 @@ public class TodoistClient {
         return sectionDao.create(args);
     }
 
-    public Section getSection(long id) {
+    public Section getSection(String id) {
         return sectionDao.get(id);
     }
 
-    public void updateSection(long id, String name) {
+    public void updateSection(String id, String name) {
         sectionDao.update(id, name);
     }
 
-    public void deleteSection(long id) {
+    public void deleteSection(String id) {
         sectionDao.delete(id);
     }
 
@@ -94,29 +94,29 @@ public class TodoistClient {
         return taskDao.create(args);
     }
 
-    public Task getTask(long id) {
+    public Task getTask(String id) {
         return taskDao.getActive(id);
     }
 
-    public void updateTask(long id, Arguments.UpdateTaskArgs args) {
+    public void updateTask(String id, Arguments.UpdateTaskArgs args) {
         taskDao.update(id, args);
     }
 
-    public void closeTask(long id) {
+    public void closeTask(String id) {
         taskDao.close(id);
     }
 
-    public void reOpenTask(long id) {
+    public void reOpenTask(String id) {
         taskDao.reOpen(id);
     }
 
-    public void deleteTask(long id) {
+    public void deleteTask(String id) {
         taskDao.delete(id);
     }
 
-    public Collection<Comment> getCommentsOfProject(long projectId) { return commentDao.getAllInProject(projectId);}
+    public Collection<Comment> getCommentsOfProject(String projectId) { return commentDao.getAllInProject(projectId);}
 
-    public Collection<Comment> getCommentsOfTask(long taskId) {
+    public Collection<Comment> getCommentsOfTask(String taskId) {
         return commentDao.getAllInTask(taskId);
     }
 
@@ -124,15 +124,15 @@ public class TodoistClient {
         return commentDao.create(args);
     }
 
-    public Comment getComment(long id) {
+    public Comment getComment(String id) {
         return commentDao.get(id);
     }
 
-    public void updateComment(long id, String content) {
+    public void updateComment(String id, String content) {
         commentDao.update(id, content);
     }
 
-    public void deleteComment(long id) {
+    public void deleteComment(String id) {
         commentDao.delete(id);
     }
 
@@ -144,13 +144,13 @@ public class TodoistClient {
         return labelDao.create(args);
     }
 
-    public Label getLabel(long id) { return labelDao.get(id);}
+    public Label getLabel(String id) { return labelDao.get(id);}
 
-    public void updateLabel(long id, Arguments.UpdateLabelArgs args) {
+    public void updateLabel(String id, Arguments.UpdateLabelArgs args) {
         labelDao.update(id, args);
     }
 
-    public void deleteLabel(long id) {
+    public void deleteLabel(String id) {
         labelDao.delete(id);
     }
 }

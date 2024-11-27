@@ -1,4 +1,4 @@
-# ** BROKEN **
+# **BROKEN**
 
 until this project has been fully migrated to v2 of the rest api, this project will not work against the todoist api.
 see the todo.txt file for more information or [todoist's migration guide](ttps://developer.todoist.com/rest/v2/#migrating-from-v1)

@@ -5,15 +5,15 @@ import java.util.Collection;
 
 interface ICommentDao {
 
-    Collection<Comment> getAllInProject(long projectId);
+    Collection<Comment> getAllInProject(String projectId);
 
-    Collection<Comment> getAllInTask(long taskId);
+    Collection<Comment> getAllInTask(String taskId);
 
     Comment create(Arguments.CreateCommentArgs args);
 
-    Comment get(long commentId);
+    Comment get(String commentId);
 
-    void update(long commentId, String content);
+    void update(String commentId, String content);
 
-    void delete(long commentId);
+    void delete(String commentId);
 }

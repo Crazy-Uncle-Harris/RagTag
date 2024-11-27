@@ -8,13 +8,13 @@ interface ITaskDao {
 
     Task create(Arguments.CreateTaskArgs args);
 
-    Task getActive(long id);
+    Task getActive(String id);
 
-    void update(long id, Arguments.UpdateTaskArgs args);
+    void update(String id, Arguments.UpdateTaskArgs args);
 
-    void close(long id);
+    void close(String id);
 
-    void reOpen(long id);
+    void reOpen(String id);
 
-    void delete(long id);
+    void delete(String id);
 }

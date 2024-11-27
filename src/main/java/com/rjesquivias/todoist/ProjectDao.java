@@ -31,7 +31,7 @@ final class ProjectDao implements IProjectDao {
     }
 
     @Override
-    public Project get(long id) {
+    public Project get(String id) {
         LOGGER.info("ProjectDao::get(long id)");
         HttpRequest request = httpRequestFactory.buildGet(baseUri + id);
         return httpRequestHelper.makeRequest(request, okPredicate, ImmutableProject.class);
@@ -45,14 +45,14 @@ final class ProjectDao implements IProjectDao {
     }
 
     @Override
-    public void update(long id, Arguments.UpdateProjectArgs args) {
+    public void update(String id, Arguments.UpdateProjectArgs args) {
         LOGGER.info("ProjectDao::update(UpdateArgs args)");
         HttpRequest request = httpRequestFactory.buildPost(baseUri + id, args);
         httpRequestHelper.makeRequest(request, noContentPredicate, ImmutableProject.class);
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(String id) {
         LOGGER.info("ProjectDao::delete(long id)");
         HttpRequest request = httpRequestFactory.buildDelete(baseUri + id);
         httpRequestHelper.makeRequest(request, noContentPredicate, ImmutableProject.class);

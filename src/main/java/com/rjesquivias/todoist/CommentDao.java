@@ -24,7 +24,7 @@ final class CommentDao implements ICommentDao {
     }
 
     @Override
-    public Collection<Comment> getAllInProject(long projectId) {
+    public Collection<Comment> getAllInProject(String projectId) {
         LOGGER.info("CommentDao::getAllInProject(long projectId)");
         HttpRequest request = httpRequestFactory.buildGet(
                 String.format("%s?project_id=%d", baseUri, projectId));
@@ -32,7 +32,7 @@ final class CommentDao implements ICommentDao {
     }
 
     @Override
-    public Collection<Comment> getAllInTask(long taskId) {
+    public Collection<Comment> getAllInTask(String taskId) {
         LOGGER.info("CommentDao::getAllInTask(long taskId)");
         HttpRequest request = httpRequestFactory.buildGet(
                 String.format("%s?task_id=%d", baseUri, taskId));
@@ -47,7 +47,7 @@ final class CommentDao implements ICommentDao {
     }
 
     @Override
-    public Comment get(long commentId) {
+    public Comment get(String commentId) {
 
         LOGGER.info("CommentDao::get(long commentId)");
         HttpRequest request = httpRequestFactory.buildGet(baseUri + commentId);
@@ -55,7 +55,7 @@ final class CommentDao implements ICommentDao {
     }
 
     @Override
-    public void update(long commentId, String content) {
+    public void update(String commentId, String content) {
         LOGGER.info("CommentDao::update(long commentId, String content)");
         HttpRequest request = httpRequestFactory.buildPost(baseUri + commentId,
                 String.format("{\"content\": \"%s\"}", content));
@@ -63,7 +63,7 @@ final class CommentDao implements ICommentDao {
     }
 
     @Override
-    public void delete(long commentId) {
+    public void delete(String commentId) {
         LOGGER.info("CommentDao::delete(long commentId)");
         HttpRequest request = httpRequestFactory.buildDelete(baseUri + commentId);
         httpRequestHelper.makeRequest(request, noContentPredicate, ImmutableComment.class);

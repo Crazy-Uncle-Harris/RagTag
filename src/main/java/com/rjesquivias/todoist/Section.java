@@ -13,10 +13,10 @@ import org.immutables.value.Value;
 )
 @JsonIgnoreProperties(ignoreUnknown = true)
 public sealed interface Section permits ImmutableSection {
-    long id();
+    String id();
 
     @JsonProperty("project_id")
-    long projectId();
+    String projectId();
 
     long order();
 

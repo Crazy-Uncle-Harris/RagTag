@@ -12,8 +12,8 @@ public interface Arguments {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     final class CreateCommentArgs {
 
-        private Long task_id;
-        private Long project_id;
+        private String task_id;
+        private String project_id;
         private String content;
     }
 
@@ -64,7 +64,7 @@ public interface Arguments {
     class CreateSectionArgs {
 
         private String name;
-        private Long project_id;
+        private String project_id;
         private Long order;
     }
 
@@ -73,9 +73,9 @@ public interface Arguments {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     class GetAllActiveTasksArgs {
 
-        private Long project_id;
-        private Long section_id;
-        private Long label_id;
+        private String project_id;
+        private String section_id;
+        private String label_id;
         private String filter;
         private String lang;
         private Collection<Long> ids;
@@ -88,8 +88,8 @@ public interface Arguments {
 
         private String content;
         private String description;
-        private Long project_id;
-        private Long section_id;
+        private String project_id;
+        private String section_id;
         private Long parent_id;
         private Long parent;
         private Long order;
