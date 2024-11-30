@@ -2,6 +2,9 @@ package com.rjesquivias.todoist;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -11,6 +14,8 @@ import org.immutables.value.Value;
         overshadowImplementation = true
 )
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonDeserialize(builder = Project.Builder.class)
+@JsonPOJOBuilder(withPrefix = "")
 public sealed interface Project permits ImmutableProject {
     @JsonProperty("id")
     String id();
@@ -48,8 +53,8 @@ public sealed interface Project permits ImmutableProject {
     @JsonProperty("url")
     String url();
 
-    static Builder builder() {
-        return new Builder();
+    static Project.Builder builder() {
+        return new Project.Builder();
     }
 
     final class Builder extends ImmutableProject.Builder {
