@@ -27,7 +27,7 @@ final class CommentDao implements ICommentDao {
     public Collection<Comment> getAllInProject(String projectId) {
         LOGGER.info("CommentDao::getAllInProject(long projectId)");
         HttpRequest request = httpRequestFactory.buildGet(
-                String.format("%s?project_id=%d", baseUri, projectId));
+                String.format("%s?project_id=%s", baseUri, projectId));
         return httpRequestHelper.makeCollectionRequest(request, okPredicate, ImmutableComment.class);
     }
 
@@ -35,7 +35,7 @@ final class CommentDao implements ICommentDao {
     public Collection<Comment> getAllInTask(String taskId) {
         LOGGER.info("CommentDao::getAllInTask(long taskId)");
         HttpRequest request = httpRequestFactory.buildGet(
-                String.format("%s?task_id=%d", baseUri, taskId));
+                String.format("%s?task_id=%s", baseUri, taskId));
         return httpRequestHelper.makeCollectionRequest(request, okPredicate, ImmutableComment.class);
     }
 

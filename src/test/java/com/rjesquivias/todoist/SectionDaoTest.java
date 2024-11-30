@@ -50,7 +50,7 @@ public class SectionDaoTest {
         responsePredicateArgumentCaptor.capture(), classArgumentCaptor.capture());
 
     HttpRequest expectedHttpRequest = httpRequestFactory.buildGet(
-        String.format("%s?project_id=%d", validUriString, testProjectId));
+        String.format("%s?project_id=%s", validUriString, testProjectId));
     assertEquals(expectedHttpRequest, requestArgumentCaptor.getValue());
     assertEquals(okPredicate, responsePredicateArgumentCaptor.getValue());
     assertEquals(ImmutableSection.class, classArgumentCaptor.getValue());

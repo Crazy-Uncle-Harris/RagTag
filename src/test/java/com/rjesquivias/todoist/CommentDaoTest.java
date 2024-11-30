@@ -31,7 +31,7 @@ public class CommentDaoTest {
         responsePredicateArgumentCaptor.capture(), classArgumentCaptor.capture());
 
     HttpRequest expectedHttpRequest = httpRequestFactory.buildGet(
-        String.format("%s?project_id=%d", validUriString, testProjectId));
+        String.format("%s?project_id=%s", validUriString, testProjectId));
 
     assertEquals(expectedHttpRequest, requestArgumentCaptor.getValue());
     assertEquals(okPredicate, responsePredicateArgumentCaptor.getValue());
@@ -54,7 +54,7 @@ public class CommentDaoTest {
         responsePredicateArgumentCaptor.capture(), classArgumentCaptor.capture());
 
     HttpRequest expectedHttpRequest = httpRequestFactory.buildGet(
-        String.format("%s?task_id=%d", validUriString, testTaskId));
+        String.format("%s?task_id=%s", validUriString, testTaskId));
 
     assertEquals(expectedHttpRequest, requestArgumentCaptor.getValue());
     assertEquals(okPredicate, responsePredicateArgumentCaptor.getValue());

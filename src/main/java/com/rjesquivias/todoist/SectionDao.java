@@ -34,7 +34,7 @@ final class SectionDao implements ISectionDao {
     public Collection<Section> getAll(String project_id) {
         LOGGER.info("SectionDao::getAll(long project_id)");
         HttpRequest request = httpRequestFactory.buildGet(
-                String.format("%s?project_id=%d", baseUri, project_id));
+                String.format("%s?project_id=%s", baseUri, project_id));
         return httpRequestHelper.makeCollectionRequest(request, okPredicate, ImmutableSection.class);
     }
 
