@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 
 import org.immutables.value.Value;
+import org.jetbrains.annotations.Nullable;
 
 @Value.Immutable
 @Value.Style(
@@ -28,6 +29,7 @@ public sealed interface Project permits ImmutableProject {
     Color color();
 
     @JsonProperty("parent_id")
+    @Nullable
     String parentId();
 
     @JsonProperty("order")
