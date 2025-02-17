@@ -1,6 +1,6 @@
 package com.rjesquivias.todoist;
 
-import org.apache.http.HttpStatus;
+import org.apache.hc.core5.http.HttpStatus;
 
 final class Predicates {
     private Predicates() {

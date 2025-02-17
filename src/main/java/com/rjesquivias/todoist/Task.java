@@ -10,7 +10,8 @@ import java.util.Collection;
 @Value.Style(
         builderVisibility = Value.Style.BuilderVisibility.PACKAGE,
         visibility = Value.Style.ImplementationVisibility.PACKAGE,
-        overshadowImplementation = true
+        overshadowImplementation = true,
+        jdkOnly = true
 )
 @JsonIgnoreProperties(ignoreUnknown = true)
 public sealed interface Task permits ImmutableTask {

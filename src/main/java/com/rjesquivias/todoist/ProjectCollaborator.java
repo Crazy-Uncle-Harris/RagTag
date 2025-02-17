@@ -8,7 +8,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Value.Style(
         builderVisibility = Value.Style.BuilderVisibility.PACKAGE,
         visibility = Value.Style.ImplementationVisibility.PACKAGE,
-        overshadowImplementation = true
+        overshadowImplementation = true,
+        jdkOnly = true
 )
 @JsonIgnoreProperties(ignoreUnknown = true)
 public sealed interface ProjectCollaborator permits ImmutableProjectCollaborator {
