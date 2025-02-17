@@ -6,40 +6,43 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.stream.Stream;
 
 public enum Color {
-    BERRY_RED(30),
-    RED(31),
-    ORANGE(32),
-    YELLOW(33),
-    OLIVE_GREEN(34),
-    LIME_GREEN(35),
-    GREEN(36),
-    MINT_GREEN(37),
-    TEAL(38),
-    SKY_BLUE(39),
-    LIGHT_BLUE(40),
-    BLUE(41),
-    GRAPE(42),
-    VIOLET(43),
-    LAVENDER(44),
-    MAGENTA(45),
-    SALMON(46),
-    CHARCOAL(47),
-    GREY(48),
-    TAUPE(49);
+    BERRY_RED("berry_red"),
+    RED("red"),
+    ORANGE("orange"),
+    YELLOW("yellow"),
+    OLIVE_GREEN("olive_green"),
+    LIME_GREEN("lime_green"),
+    GREEN("green"),
+    MINT_GREEN("mint_green"),
+    TEAL("teal"),
+    SKY_BLUE("sky_blue"),
+    LIGHT_BLUE("light_blue"),
+    BLUE("blue"),
+    GRAPE("grape"),
+    VIOLET("violet"),
+    LAVENDER("lavender"),
+    MAGENTA("magenta"),
+    SALMON("salmon"),
+    CHARCOAL("charcoal"),
+    GREY("grey"),
+    TAUPE("taupe");
 
-    private final long id;
+    private final String name;
 
-    Color(long id) {
-        this.id = id;
+    Color(String name) {
+        this.name = name;
     }
 
     @JsonValue
-    public long getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
     @JsonCreator
-    static Color fromId(int id) {
-        return Stream.of(Color.values()).filter(color -> color.id == id).findFirst().get();
+    static Color fromName(String name) {
+        return Stream.of(Color.values())
+            .filter(color -> color.name.equals(name))
+            .findFirst()
+            .orElseThrow(() -> new IllegalArgumentException("Unknown color: " + name));
     }
 }

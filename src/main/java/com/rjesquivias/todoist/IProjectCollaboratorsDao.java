@@ -3,7 +3,7 @@ package com.rjesquivias.todoist;
 import java.util.Collection;
 
 public interface IProjectCollaboratorsDao {
-    Collection<ProjectCollaborator> getAll(long projectId);
+    Collection<ProjectCollaborator> getAll(String projectId);
 
-    ProjectCollaborator get(long projectId, long id);
+    ProjectCollaborator get(String projectId, String id);
 }

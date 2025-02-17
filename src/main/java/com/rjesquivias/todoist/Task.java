@@ -31,7 +31,7 @@ public sealed interface Task permits ImmutableTask {
     boolean completed();
 
     @JsonProperty("label_ids")
-    Collection<Long> labelIds();
+    Collection<String> labelIds();
 
     @JsonProperty("parent_id")
     String parentId();
@@ -47,9 +47,9 @@ public sealed interface Task permits ImmutableTask {
     @JsonProperty("comment_count")
     long commentCount();
 
-    long assignee();
+    String assignee();
 
-    long assigner();
+    String assigner();
 
     static Task.Builder builder() {
         return new Task.Builder();

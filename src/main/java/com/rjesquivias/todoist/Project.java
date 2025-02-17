@@ -49,7 +49,7 @@ public sealed interface Project permits ImmutableProject {
     boolean teamInbox();
 
     @JsonProperty("sync_id")
-    long syncId();
+    String syncId();
 
     @JsonProperty("url")
     String url();

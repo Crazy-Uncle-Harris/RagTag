@@ -20,23 +20,20 @@ public final class TestConstants {
   static final String testLang = "en";
   static final String testContent = "testContent";
   static final String testDescription = "testDescription";
-  static final Long testParentId = 123L;
-  static final Long testParent = 321L;
+  static final String testParentId = "123";
+  static final String testParent = "321";
   static final Long testOrder = 382L;
   static final Long testPriority = 271L;
   static final String testDueString = "testDueString";
   static final String testDueDate = "testDueDate";
   static final String testDueDatetime = "testDueDatetime";
   static final String testDueLang = "testDueLang";
-  static final Long testAssignee = 2819L;
+  static final String testAssignee = "2819";
   static final String testName = "testName";
   static final Boolean testFavorite = true;
   static final Color testColor = Color.CHARCOAL;
-  static final Collection<Long> testIds = List.of(1L, 2L,
-          3L,
-          4L, 5L);
-  static final Collection<Long> testLabelIds = List.of(1L, 2L,
-          3L, 4L, 5L);
+  static final Collection<String> testIds = List.of("1", "2", "3", "4", "5");
+  static final Collection<String> testLabelIds = List.of("1", "2", "3", "4", "5");
   static final HttpRequestFactory httpRequestFactory = new HttpRequestFactory(testToken,
       new ObjectMapper());
   static final Arguments.CreateSectionArgs createSectionArgs = Arguments.CreateSectionArgs.builder().name("test-section-1")

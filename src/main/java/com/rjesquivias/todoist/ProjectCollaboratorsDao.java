@@ -23,7 +23,7 @@ public class ProjectCollaboratorsDao implements IProjectCollaboratorsDao{
     }
 
     @Override
-    public Collection<ProjectCollaborator> getAll(long projectId) {
+    public Collection<ProjectCollaborator> getAll(String projectId) {
         LOGGER.info("CollaboratorsDao::getAll()");
         HttpRequest request = httpRequestFactory.buildGet(baseUri);
 
@@ -31,7 +31,7 @@ public class ProjectCollaboratorsDao implements IProjectCollaboratorsDao{
     }
 
     @Override
-    public ProjectCollaborator get(long projectId, long id) {
+    public ProjectCollaborator get(String projectId, String id) {
         LOGGER.info("CollaboratorsDao::get()");
         HttpRequest request = httpRequestFactory.buildGet(baseUri);
 

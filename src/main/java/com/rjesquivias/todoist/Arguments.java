@@ -44,7 +44,7 @@ public interface Arguments {
     class CreateProjectArgs {
 
         private String name;
-        private long parent_id;
+        private String parent_id;
         private Color color;
         private boolean favorite;
     }
@@ -78,7 +78,7 @@ public interface Arguments {
         private String label_id;
         private String filter;
         private String lang;
-        private Collection<Long> ids;
+        private Collection<String> ids;
     }
 
     @Data
@@ -90,16 +90,16 @@ public interface Arguments {
         private String description;
         private String project_id;
         private String section_id;
-        private Long parent_id;
-        private Long parent;
+        private String parent_id;
+        private String parent;
         private Long order;
-        private Collection<Long> label_ids;
+        private Collection<String> label_ids;
         private Long priority;
         private String due_string;
         private String due_date;
         private String due_datetime;
         private String due_lang;
-        private Long assignee;
+        private String assignee;
     }
 
     @Data
@@ -109,7 +109,7 @@ public interface Arguments {
 
         private String content;
         private String description;
-        private Collection<Long> label_ids;
+        private Collection<String> label_ids;
         private Long priority;
         private String due_string;
         private String due_date;
