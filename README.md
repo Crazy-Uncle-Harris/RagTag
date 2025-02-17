@@ -7,7 +7,7 @@ see the todo.txt file for more information or [todoist's migration guide](ttps:/
 
 RagTag is a Java client for the [Todoist REST API](https://developer.todoist.com/rest/v1/#overview).
 
-# Getting started
+## Getting started
 
 ## Installation
 
