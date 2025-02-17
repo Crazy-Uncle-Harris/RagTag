@@ -40,11 +40,11 @@ public final class TestConstants {
       .project_id(testProjectId).build();
   static final Arguments.CreateTaskArgs createTaskArgs = Arguments.CreateTaskArgs.builder().content(testContent)
       .description(testDescription).project_id(testProjectId).section_id(testSectionId)
-      .parent_id(testParentId).parent(testParent).order(testOrder).label_ids(testLabelIds)
+      .parent_id(testParentId).parent(testParent).order(testOrder).labels(testLabelIds)
       .priority(testPriority).due_string(testDueString).due_date(testDueDate)
       .due_datetime(testDueDatetime).due_lang(testDueLang).assignee(testAssignee).build();
   static final Arguments.GetAllActiveTasksArgs getAllActiveTaskArgs = Arguments.GetAllActiveTasksArgs.builder()
-      .project_id(testProjectId).section_id(testSectionId).label_id(testLabelId).filter(testFilter)
+      .project_id(testProjectId).section_id(testSectionId).labels(testLabelIds).filter(testFilter)
       .lang(testLang).ids(testIds).build();
   static final Arguments.CreateCommentArgs createCommentArgs = Arguments.CreateCommentArgs.builder().task_id(testTaskId)
       .content(testContent).build();

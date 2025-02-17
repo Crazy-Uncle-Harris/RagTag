@@ -46,7 +46,8 @@ public interface Arguments {
         private String name;
         private String parent_id;
         private Color color;
-        private boolean favorite;
+        private boolean is_favorite;
+        private String view_style;
     }
 
     @Data
@@ -55,7 +56,8 @@ public interface Arguments {
 
         private String name;
         private Color color;
-        private boolean favorite;
+        private boolean is_favorite;
+        private String view_style;
     }
 
     @Data
@@ -75,7 +77,7 @@ public interface Arguments {
 
         private String project_id;
         private String section_id;
-        private String label_id;
+        private Collection<String> labels;
         private String filter;
         private String lang;
         private Collection<String> ids;
@@ -93,13 +95,15 @@ public interface Arguments {
         private String parent_id;
         private String parent;
         private Long order;
-        private Collection<String> label_ids;
+        private Collection<String> labels;
         private Long priority;
         private String due_string;
         private String due_date;
         private String due_datetime;
         private String due_lang;
         private String assignee;
+        private Integer duration;
+        private String duration_unit;
     }
 
     @Data
@@ -109,12 +113,14 @@ public interface Arguments {
 
         private String content;
         private String description;
-        private Collection<String> label_ids;
+        private Collection<String> labels;
         private Long priority;
         private String due_string;
         private String due_date;
         private String due_datetime;
         private String due_lang;
         private Long assignee;
+        private Integer duration;
+        private String duration_unit;
     }
 }

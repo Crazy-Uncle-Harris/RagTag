@@ -21,9 +21,13 @@ public sealed interface Comment permits ImmutableComment {
     @JsonProperty("project_id")
     String projectId();
 
-    String posted();
+    @JsonProperty("posted_at")
+    String postedAt();
 
     String content();
+
+    @JsonProperty("attachment")
+    Object attachment();
 
     static Builder builder() {
         return new Builder();

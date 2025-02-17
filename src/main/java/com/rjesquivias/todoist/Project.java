@@ -36,20 +36,20 @@ public sealed interface Project permits ImmutableProject {
     @JsonProperty("comment_count")
     long commentCount();
 
-    @JsonProperty("shared")
-    boolean shared();
+    @JsonProperty("is_shared")
+    boolean isShared();
 
-    @JsonProperty("favorite")
-    boolean favorite();
+    @JsonProperty("is_favorite")
+    boolean isFavorite();
 
-    @JsonProperty("inbox_project")
-    boolean inboxProject();
+    @JsonProperty("is_inbox_project")
+    boolean isInboxProject();
 
-    @JsonProperty("team_inbox")
-    boolean teamInbox();
+    @JsonProperty("is_team_inbox")
+    boolean isTeamInbox();
 
-    @JsonProperty("sync_id")
-    String syncId();
+    @JsonProperty("view_style")
+    String viewStyle();
 
     @JsonProperty("url")
     String url();

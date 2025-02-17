@@ -1,6 +1,7 @@
 package com.rjesquivias.todoist;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -15,7 +16,8 @@ public sealed interface Due permits ImmutableDue {
 
     String date();
 
-    boolean recurring();
+    @JsonProperty("is_recurring")
+    boolean isRecurring();
 
     String datetime();
 
